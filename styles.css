@@ -8,25 +8,41 @@ body {
     background-color: #f0f0f0;
 }
 
-.container {
-    text-align: center;
+.heart {
+    position: relative;
+    width: 200px;
+    height: 200px;
 }
 
-#inputBox {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 160px;
+    border-radius: 100px 100px 0 0;
+    background: red;
 }
 
-.output-box {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    width: 300px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
+.heart::before {
+    left: 100px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.heart span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
